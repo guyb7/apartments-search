@@ -1,0 +1,17 @@
+{
+  "name": "ApartmentSearch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "fetch": "node fetchData.js",
+    "start-elastic": "./elasticsearch/bin/elasticsearch"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "elasticsearch": "^14.0.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.19.4",
+    "qs": "^6.5.1"
+  }
+}
