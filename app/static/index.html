@@ -9,19 +9,23 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="header" uk-grid uk-sticky>
-      <span class="uk-width-small">PPM</span>
-      <span class="uk-width-small">Price</span>
-      <span class="uk-width-small">Size</span>
-      <span class="uk-width-small">Floor</span>
-      <span class="uk-width-expand">Address</span>
+    <div class="uk-container">
+      <div class="header" uk-grid uk-sticky>
+        <span class="uk-width-small">PPM</span>
+        <span class="uk-width-small">Price</span>
+        <span class="uk-width-small">Size</span>
+        <span class="uk-width-small">Floor</span>
+        <span class="uk-width-expand">Address</span>
+      </div>
+      <ul id="apartments" uk-accordion="multiple: true">
+      </ul>
     </div>
-    <ul id="apartments" uk-accordion="multiple: true">
-    </ul>
     <script src="lodash.min.js"></script>
+    <script src="moment.min.js"></script>
     <script src="numeral.min.js"></script>
     <script src="axios.min.js"></script>
     <script src="uikit.min.js"></script>
+    <script src="uikit-icons.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

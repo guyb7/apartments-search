@@ -10,20 +10,35 @@ const es = new elasticsearch.Client({
   apiVersion: '6.0'
 })
 
-app.get('/axios.min.js', (req, res) => {
-  res.sendFile(path.join(__dirname, '../node_modules/axios/dist/axios.min.js'));
-})
-app.get('/lodash.min.js', (req, res) => {
-  res.sendFile(path.join(__dirname, '../node_modules/lodash/core.min.js'));
-})
-app.get('/numeral.min.js', (req, res) => {
-  res.sendFile(path.join(__dirname, '../node_modules/numeral/min/numeral.min.js'));
-})
-app.get('/uikit.min.js', (req, res) => {
-  res.sendFile(path.join(__dirname, '../node_modules/uikit/dist/js/uikit.min.js'));
-})
-app.get('/uikit.min.css', (req, res) => {
-  res.sendFile(path.join(__dirname, '../node_modules/uikit/dist/css/uikit.min.css'));
+const libs = [
+  {
+    public: 'axios.min.js',
+    module: 'axios/dist/axios.min.js'
+  }, {
+    public: 'lodash.min.js',
+    module: 'lodash/core.min.js'
+  }, {
+    public: 'moment.min.js',
+    module: 'moment/min/moment.min.js'
+  }, {
+    public: 'numeral.min.js',
+    module: 'numeral/min/numeral.min.js'
+  }, {
+    public: 'uikit.min.js',
+    module: 'uikit/dist/js/uikit.min.js'
+  }, {
+    public: 'uikit-icons.min.js',
+    module: 'uikit/dist/js/uikit-icons.min.js'
+  }, {
+    public: 'uikit.min.css',
+    module: 'uikit/dist/css/uikit.min.css'
+  }
+]
+
+libs.map(l => {
+  app.get('/' + l.public, (req, res) => {
+    res.sendFile(path.join(__dirname, '../node_modules/' + l.module));
+  })
 })
 
 app.get('/api/es', (req, res) => {

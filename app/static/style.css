@@ -13,3 +13,13 @@ html, body {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+#apartments .uk-open {
+  margin-bottom: 60px;
+}
+#apartments li:hover {
+  background-color: #f6f6f6;
+}
+#apartments a {
+  padding: 10px;
+}
