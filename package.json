@@ -5,13 +5,17 @@
   "license": "MIT",
   "scripts": {
     "fetch": "node fetchData.js",
-    "start-elastic": "./elasticsearch/bin/elasticsearch"
+    "start-elastic": "./elasticsearch/bin/elasticsearch",
+    "start": "node app/index.js"
   },
   "dependencies": {
     "axios": "^0.17.1",
     "elasticsearch": "^14.0.0",
+    "express": "^4.16.2",
     "lodash": "^4.17.4",
     "moment": "^2.19.4",
-    "qs": "^6.5.1"
+    "numeral": "^2.0.6",
+    "qs": "^6.5.1",
+    "uikit": "^3.0.0-beta.35"
   }
 }

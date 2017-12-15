@@ -1,0 +1,15 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.header {
+  background-color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
