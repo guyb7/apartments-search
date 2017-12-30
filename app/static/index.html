@@ -10,6 +10,23 @@
   </head>
   <body>
     <div class="uk-container">
+      <form id="form" class="uk-grid-small" uk-grid>
+        <div class="uk-width-2-3@s">
+          <input id="search" class="uk-input" type="text" placeholder="Search">
+        </div>
+        <div class="uk-width-1-6@s">
+          <div class="uk-form-controls">
+            <select id="sort" class="uk-select">
+              <option value="price:asc">Price</option>
+              <option value="publishDate:desc">Date</option>
+              <option value="ppm:asc">PPM</option>
+            </select>
+          </div>
+        </div>
+        <div class="uk-width-1-6@s">
+          <button class="uk-button uk-button-default" uk-icon="icon: refresh"></button>
+        </div>
+      </form>
       <div class="header" uk-grid uk-sticky>
         <span class="uk-width-small">PPM</span>
         <span class="uk-width-small">Price</span>

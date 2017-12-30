@@ -1,7 +1,20 @@
-const params = {
-  q: 'price:<2000000 AND data.type=דירה',
-  sort: 'ppm:asc',
-  size: 9999
+const formEl = document.getElementById('form')
+const searchEl = document.getElementById('search')
+const sortEl = document.getElementById('sort')
+searchEl.value = 'price:<2100000 AND data.type=דירה AND publishDate:>=1513209600'
+sortEl.value = 'ppm:asc'
+
+formEl.addEventListener('submit', e => {
+  e.preventDefault()
+  getData()
+})
+
+const getParams = () => {
+  return {
+    q: searchEl.value,
+    sort: sortEl.value,
+    size: 9999
+  }
 }
 
 const extraData = data => {
@@ -84,14 +97,18 @@ const tableRow = data => {
   `
 }
 
-axios.get('/api/es', { params })
-.then(({ data }) => {
-  let tableHtml = ''
-  _.each(data.hits, d => {
-    tableHtml += tableRow(d._source)
+const getData = () => {
+  axios.get('/api/es', { params: getParams() })
+  .then(({ data }) => {
+    let tableHtml = ''
+    _.each(data.hits, d => {
+      tableHtml += tableRow(d._source)
+    })
+    document.querySelector('#apartments').innerHTML = tableHtml
   })
-  document.querySelector('#apartments').innerHTML = tableHtml
-})
-.catch(e => {
-  console.error(e)
-})
+  .catch(e => {
+    console.error(e)
+  })
+}
+
+getData()
