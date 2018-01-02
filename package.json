@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "fetch": "node fetchData.js",
-    "start-elastic": "./elasticsearch/bin/elasticsearch",
+    "start-elastic": "docker run -d -p 9200:9200 -p 9300:9300 -e \"discovery.type=single-node\" docker.elastic.co/elasticsearch/elasticsearch:6.1.1",
     "start": "node app/index.js"
   },
   "dependencies": {

@@ -2,7 +2,7 @@
 
 ## Installation
 * Clone this repo and `yarn install`
-* Download [Elasticsearch 6.1.0](https://www.elastic.co/downloads/elasticsearch) to `/elasticsearch`
-* Run `yarn start-elastic`
+* Run `yarn start-elastic` (launches a docker instance in the background)
 * Run `yarn fetch`
+* Run `yarn start`
 * Example search: `http://localhost:9200/apartments/_search?pretty=true&q=*:*&sort=ppm:asc&size=30`
